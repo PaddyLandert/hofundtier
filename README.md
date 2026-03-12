@@ -39,7 +39,7 @@ Die Website kann lokal einfach durch Öffnen der Datei `index.html` im Browser g
 Die Veröffentlichung erfolgt über **GitHub Pages**.
 
 Geplante Zieladresse:
-`https://hofundtier.github.io`
+`https://paddylandert.github.io/hofundtier/`
 
 ## Hinweise
 
