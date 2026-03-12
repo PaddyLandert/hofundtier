@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hof-, Pferde- & Kleintierbetreuung Landert</title>
+  <meta name="description" content="Zuverlässige Hof-, Pferde- und Kleintierbetreuung im Zürcher Unterland – Ferienbetreuung, Stallhilfe und Unterstützung rund um Hof und Tiere." />
+  <style>
+    :root {
+      --bg: #f8f5ef;
+      --surface: #fffdf9;
+      --primary: #6b8e23;
+      --primary-dark: #4f6b19;
+      --text: #2f2a24;
+      --muted: #6e655c;
+      --border: #e8dfd2;
+      --accent: #c98b4a;
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+      --radius: 18px;
+      --max-width: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    img { max-width: 100%; display: block; }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 2rem, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: #efe7da;
+      color: var(--muted);
+      font-size: 0.95rem;
+      padding: 0.7rem 0;
+      text-align: center;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 253, 249, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .brand-badge {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      font-size: 1.2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-dark);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border: none;
+      border-radius: 999px;
+      padding: 0.95rem 1.35rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .hero {
+      padding: 4rem 0 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 0.45rem 0.8rem;
+      background: #edf4df;
+      color: var(--primary-dark);
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    h1, h2, h3 { line-height: 1.2; margin-top: 0; }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 4.3rem);
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 58ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, #fffdf9 0%, #f3ecdf 100%);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 6px);
+      padding: 1.4rem;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-image {
+      aspect-ratio: 4 / 5;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(0,0,0,0.08), rgba(0,0,0,0.08)),
+        url('https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=900&q=80') center/cover;
+      min-height: 420px;
+    }
+
+    section {
+      padding: 2rem 0 4rem;
+    }
+
+    .section-head {
+      max-width: 700px;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-head p { color: var(--muted); }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.35rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: #edf4df;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .about-photo {
+      min-height: 380px;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
+        url('https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=900&q=80') center/cover;
+      box-shadow: var(--shadow);
+    }
+
+    .bullets {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .bullet {
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+    }
+
+    .bullet strong { display: block; }
+
+    .check {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #edf4df;
+      color: var(--primary-dark);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      font-weight: 700;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, #6b8e23, #8daa47);
+      color: white;
+      border-radius: calc(var(--radius) + 10px);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .cta p { color: rgba(255,255,255,0.9); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 1.2rem;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    .contact-item {
+      padding: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    form {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    label {
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.95rem 1rem;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: white;
+      font: inherit;
+      color: var(--text);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    footer {
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+    }
+
+    .footer-grid {
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .small {
+      font-size: 0.94rem;
+      color: var(--muted);
+    }
+
+    .creator-block {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .creator-logo {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: white;
+      padding: 0.25rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .creator-text {
+      text-align: right;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .cards,
+      .about,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 2.5rem;
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+        @media (max-width: 700px) {
+      .creator-block {
+        justify-content: flex-start;
+      }
+
+      .creator-text {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .nav-links {
+        gap: 0.8rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    Liebevolle Hof-, Pferde- und Kleintierbetreuung im Zürcher Unterland
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a href="#start" class="brand">
+        <span class="brand-badge">🐾</span>
+        <span>Hof-, Pferde- & Kleintierbetreuung Landert</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#ueber-uns">Über uns</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#impressum">Impressum</a>
+        <a href="#kontakt" class="btn btn-primary">Jetzt anfragen</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="start">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Persönlich · zuverlässig · mit Erfahrung</span>
+          <h1>Hof-, Pferde- und<br />Kleintierbetreuung mit Herz</h1>
+          <p>Yvonne Landert unterstützt Sie zuverlässig bei der Betreuung Ihrer Tiere sowie bei anfallenden Arbeiten rund um Hof, Stall und Kleintierhaltung. Ob Ferienvertretung, tägliche Versorgung oder Unterstützung im Alltag – Ihre Tiere sind bei ihr in guten Händen.</p>
+          <div class="hero-actions">
+            <a href="#kontakt" class="btn btn-primary">Unverbindlich anfragen</a>
+            <a href="#leistungen" class="btn btn-secondary">Leistungen ansehen</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-image" aria-label="Tierbetreuung auf dem Hof"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="leistungen">
+      <div class="container">
+        <div class="section-head">
+          <h2>Unsere Leistungen</h2>
+          <p>Yvonne Landert bietet zuverlässige Unterstützung bei der Betreuung von Pferden und Kleintieren sowie bei anfallenden Arbeiten rund um Stall und Hof. Alle Einsätze erfolgen sorgfältig, persönlich und nach individueller Absprache.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon">🐇</div>
+            <h3>Kleintierbetreuung</h3>
+            <p>Betreuung und Versorgung von Kaninchen, Meerschweinchen, Hühnern, Katzen, Hunden und weiteren Kleintieren – ruhig, zuverlässig und tiergerecht.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🐴</div>
+            <h3>Pferdebetreuung & Stallhilfe</h3>
+            <p>Unterstützung bei Fütterung, Misten, Tränkenkontrolle, Weidegang sowie weiteren Arbeiten rund um Pferd, Stall und Hof.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🌾</div>
+            <h3>Ferienbetreuung</h3>
+            <p>Zuverlässige Betreuung Ihrer Tiere während Ferien, am Wochenende oder bei kurzfristiger Abwesenheit – individuell und nach Absprache.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="ueber-uns">
+      <div class="container about">
+        <div class="about-photo" aria-label="Vorstellung der Dienstleisterin"></div>
+
+        <div>
+          <div class="section-head">
+            <h2>Über Yvonne</h2>
+            <p>Yvonne Landert verfügt über viel praktische Erfahrung im täglichen Umgang mit Tieren und kennt die Abläufe rund um Stall, Versorgung und Betreuung aus dem eigenen Alltag. Besonders mit Pferden ist sie bestens vertraut, da sie zwei eigene Pferde hat und sich seit Jahren zuverlässig um deren Pflege und Versorgung kümmert. Auch mit Hunden und Katzen ist sie vertraut, denn zu ihrer Familie gehören zudem zwei Katzen und ihr Hund Spike.</p>
+          </div>
+
+          <div class="bullets">
+            <div class="bullet">
+              <div class="check">✓</div>
+              <div>
+                <strong>Erfahrung mit Pferden und Kleintieren</strong>
+                <span class="small">Durch zwei eigene Pferde verfügt Yvonne über viel praktische Erfahrung in Pflege, Versorgung, Fütterung und im sicheren Umgang mit Pferden.</span>
+              </div>
+            </div>
+            <div class="bullet">
+              <div class="check">✓</div>
+              <div>
+                <strong>Persönliche Betreuung</strong>
+                <span class="small">Persönliche Absprachen und eine verlässliche Kommunikation mit den Tierhalterinnen und Tierhaltern sind selbstverständlich.</span>
+              </div>
+            </div>
+            <div class="bullet">
+              <div class="check">✓</div>
+              <div>
+                <strong>Regional im Einsatz</strong>
+                <span class="small">Im Zürcher Unterland im Einsatz – persönlich, zuverlässig und mit viel Erfahrung im Alltag mit Tieren.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta">
+          <h2>Zuverlässige Unterstützung für Tiere, Stall und Hof</h2>
+          <p>Gerne wird telefonisch oder per E-Mail besprochen, welche Unterstützung benötigt wird und ob eine regelmässige oder einmalige Betreuung passend ist.</p>
+          <a href="#kontakt" class="btn btn-secondary">Kontakt aufnehmen</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="container contact-grid">
+        <div>
+          <div class="section-head">
+            <h2>Kontakt</h2>
+            <p>Kontaktaufnahmen per Telefon oder über das Anfrageformular sind jederzeit willkommen. Anfragen für Tierbetreuung, Stallhilfe und Ferienvertretung werden gerne entgegengenommen.</p>
+          </div>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <strong>Telefon</strong><br />
+              <a href="tel:+41798623832">+41 79 862 38 32</a>
+            </div>
+            <div class="contact-item">
+              <strong>Anfragen</strong><br />
+              Nutzen Sie bitte das Anfrageformular oder kontaktieren Sie Yvonne Landert telefonisch.
+            </div>
+            <div class="contact-item">
+              <strong>Einsatzgebiet</strong><br />
+              Zürcher Unterland
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <form onsubmit="sendMail(event)">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Ihr Name" required />
+            </div>
+
+            <div>
+              <label for="email">E-Mail</label>
+              <input id="email" name="email" type="email" placeholder="Ihre E-Mail-Adresse" required />
+            </div>
+
+            <div>
+              <label for="message">Nachricht</label>
+              <textarea id="message" name="message" placeholder="Worum geht es? Welche Tiere? Welche Betreuung wird gesucht?" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Anfrage vorbereiten</button>
+            <p class="small">Dieses Formular öffnet aktuell Ihr E-Mail-Programm. So bleibt die E-Mail-Adresse auf der Website selbst nicht direkt sichtbar.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="impressum">
+      <div class="container">
+        <div class="section-head">
+          <h2>Impressum</h2>
+          <p>Anbieterin der auf dieser Website beschriebenen Tierbetreuungs- und Hofdienstleistungen ist Yvonne Landert. Für die technische Umsetzung und Pflege der Website ist Patrick Landert, Landert Engineering, verantwortlich.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Anbieterin der Dienstleistungen</h3>
+            <p>
+              Yvonne Landert<br />
+              Waldhofstrasse 1<br />
+              8175 Windlach<br />
+              Schweiz
+            </p>
+            <p>
+              Telefon: <a href="tel:+41798623832">+41 79 862 38 32</a><br />
+              E-Mail: yvonne [punkt] landert [at] gmx [punkt] ch
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Verantwortlich für diese Website</h3>
+            <p>
+              Patrick Landert<br />
+              Landert Engineering
+            </p>
+            <p>Für Fragen zur technischen Umsetzung, zu Inhalten dieser Website oder zu deren Pflege ist Landert Engineering die zuständige Ansprechstelle.</p>
+          </article>
+
+          <article class="card">
+            <h3>Hinweis</h3>
+            <p>Diese Website informiert über das Angebot von Yvonne Landert im Bereich Hof-, Pferde- und Kleintierbetreuung im Zürcher Unterland. Alle Einsätze und Betreuungen erfolgen nach individueller Absprache.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="datenschutz">
+      <div class="container">
+        <div class="section-head">
+          <h2>Datenschutz</h2>
+          <p>Der Schutz Ihrer persönlichen Daten ist wichtig. Personenbezogene Daten werden auf dieser Website nur im erforderlichen Umfang bearbeitet.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Welche Daten erhoben werden</h3>
+            <p>Wenn Sie per Telefon, per E-Mail oder über das Anfrageformular Kontakt aufnehmen, können insbesondere Ihr Name, Ihre E-Mail-Adresse, Ihre Telefonnummer sowie der Inhalt Ihrer Nachricht bearbeitet werden.</p>
+          </article>
+
+          <article class="card">
+            <h3>Zweck der Datenbearbeitung</h3>
+            <p>Die erhobenen Daten werden ausschliesslich zur Bearbeitung Ihrer Anfrage und zur Kontaktaufnahme verwendet.</p>
+          </article>
+
+          <article class="card">
+            <h3>Keine externen Dienste</h3>
+            <p>Auf dieser Website werden derzeit keine externen Dienste wie Karten, Analyse-Tools, Social-Media-Einbindungen oder Tracking-Dienste eingesetzt.</p>
+          </article>
+        </div>
+
+        <div class="cards" style="margin-top: 1.2rem;">
+          <article class="card">
+            <h3>Server-Logfiles</h3>
+            <p>Beim Besuch dieser Website können durch den Hosting-Anbieter technisch notwendige Zugriffsdaten wie IP-Adresse, Datum, Uhrzeit, aufgerufene Seite oder Browserinformationen in Server-Logfiles gespeichert werden. Diese Daten dienen ausschliesslich dem technischen Betrieb und der Sicherheit der Website.</p>
+          </article>
+
+          <article class="card">
+            <h3>Kontakt für Datenschutzanliegen</h3>
+            <p>Bei Fragen zur Bearbeitung Ihrer personenbezogenen Daten können Sie sich an folgende Stelle wenden:<br /><br />Patrick Landert<br />Landert Engineering</p>
+          </article>
+
+          <article class="card">
+            <h3>Stand</h3>
+            <p>Diese Datenschutzerklärung gilt für die aktuelle Version dieser Website und kann bei Bedarf angepasst werden.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>Hof-, Pferde- & Kleintierbetreuung Landert</strong><br />
+        <span class="small">Zuverlässige Unterstützung rund um Tiere, Stall und Hof</span>
+      </div>
+      <div class="creator-block">
+        <img src="landert-engineering-logo.png" alt="Landert Engineering Logo" class="creator-logo" />
+        <div class="small creator-text">
+          © <span id="year"></span> Landert · <a href="#impressum">Impressum</a> · <a href="#datenschutz">Datenschutz</a><br />
+          Website erstellt von Landert Engineering
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function sendMail(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const subject = encodeURIComponent('Anfrage über die Website');
+      const body = encodeURIComponent(
+        'Name: ' + name + '\n' +
+        'E-Mail: ' + email + '\n\n' +
+        'Nachricht:\n' + message
+      );
+
+      window.location.href = `mailto:yvonne.landert@gmx.ch?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
+</html>
